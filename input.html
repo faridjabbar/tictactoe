@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Player Names</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Player Names</h1>
+        <label>Player X Name: <input type="text" id="playerX" placeholder="Enter Player X Name"></label><br>
+        <label>Player O Name: <input type="text" id="playerO" placeholder="Enter Player O Name"></label><br>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+    <script>
+        function startGame() {
+            const playerX = document.getElementById('playerX').value || 'Player X';
+            const playerO = document.getElementById('playerO').value || 'Player O';
+            localStorage.setItem('playerX', playerX);
+            localStorage.setItem('playerO', playerO);
+            window.location.href = 'game.html';
+        }
+    </script>
+</body>
+</html>
